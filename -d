@@ -1,0 +1,213 @@
+== Info: Hostname was NOT found in DNS cache
+== Info:   Trying 2a02:26f0:2400:18a::3d5...
+== Info: Connected to acme-v01.api.letsencrypt.org (2a02:26f0:2400:18a::3d5) port 443 (#0)
+== Info: successfully set certificate verify locations:
+== Info:   CAfile: none
+  CApath: /etc/ssl/certs
+== Info: SSLv3, TLS Unknown, Unknown (22):
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+== Info: SSLv3, TLS handshake, Client hello (1):
+=> Send SSL data, 512 bytes (0x200)
+0000: .........w.....Jn..`$......z.........F....0.,.(.$.............k.
+0040: j.i.h.9.8.7.6.........2...*.&.......=.5.../.+.'.#.............g.
+0080: @.?.>.3.2.1.0.........E.D.C.B.1.-.).%.......<./...A.............
+00c0: ..........5...!.....acme-v01.api.letsencrypt.org................
+0100: ........................... ....................................
+0140: ................................................................
+0180: ................................................................
+01c0: ................................................................
+== Info: SSLv2, Unknown (22):
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....Y
+== Info: SSLv3, TLS handshake, Server hello (2):
+<= Recv SSL data, 89 bytes (0x59)
+0000: ...U......<.P......../3...6.....e..... ....8Ol.......b.u.-....`.
+0040: ..d.6V-.0................
+== Info: SSLv2, Unknown (22):
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+== Info: SSLv3, TLS handshake, CERT (11):
+<= Recv SSL data, 5273 bytes (0x1499)
+0000: ..........0...0................N0..dB..x0...*.H........0Z1.0...
+0040: U....US1.0...U....IdenTrust1.0...U....TrustID Server1.0...U....T
+0080: rustID Server CA A520...150626170545Z..180625170545Z0..1.0...U..
+00c0: ..*.api.letsencrypt.org1)0'..U... INTERNET SECURITY RESEARCH GRO
+0100: UP1.0...U....Mountain View1.0...U....California1.0...U....US0.."
+0140: 0...*.H.............0.........B...n96k....`1...+..|....:..f6....
+0180: .M...].q.......n....Wr....ohxhA.%...&...(2........J9e..W.4..o...
+01c0: ...F ...c0....)...,.6,.5F.O.....o...'K.!b8bm....Q<{V..3.....H.Z.
+0200: ....!..X..?..v.........7.....R.'ylE..%....E.T...............E..[
+0240: ...[-...........;O..9..N..............0...0...U...........0..'..
+0280: U. ....0...0.....`.H.../...0..0@..+........4https://secure.ident
+02c0: rust.com/certificates/policy/ts/0....+.......0.....This TrustID 
+0300: Server Certificate has been issued in accordance with IdenTrust'
+0340: s TrustID Certificate Policy found at https://secure.identrust.c
+0380: om/certificates/policy/ts/0.....g.....0..0@..+........4https://s
+03c0: ecure.identrust.com/certificates/policy/ts/0....+.......0.....Th
+0400: is TrustID Server Certificate has been issued in accordance with
+0440:  IdenTrust's TrustID Certificate Policy found at https://secure.
+0480: identrust.com/certificates/policy/ts/0...U....../...qz.....e....
+04c0: ....0E..U...>0<0:.8.6.4http://validation.identrust.com/crl/trust
+0500: idcaa52.crl0....+........x0v00..+.....0..$http://commercial.ocsp
+0540: .identrust.com0B..+.....0..6http://validation.identrust.com/cert
+0580: s/trustidcaa52.p7c0...U.%..0...+.........+.......0...U.#..0....V
+05c0: $<......x...XH..T.05..U....0,..*.api.letsencrypt.org..api.letsen
+0600: crypt.org0...*.H..................a.6E.....x..+p....{..=.;`.b.c/
+0640: .B..3l..| F..L7j.2O....z.f.6]n.N...........=....>...'....l.Vd.e 
+0680: ...#....E1.j.AJ.j;2#..o.Dm1..a.b..O2.4......:..t)..I.(.)R...q.qr
+06c0: o...i...e.P..i...TR....0..b.Qw...Hp..C.j.........]../.?A.Cg...
+0700: .E...jXZ.C(.e.....v.........6...0...0..............@.U..&...,.w0
+0740: ...*.H........0J1.0...U....US1.0...U....IdenTrust1'0%..U....Iden
+0780: Trust Commercial Root CA 10...140320180538Z..220320180538Z0Z1.0.
+07c0: ..U....US1.0...U....IdenTrust1.0...U....TrustID Server1.0...U...
+0800: .TrustID Server CA A520.."0...*.H.............0.........i.....?.
+0840: &Bv..s?.2D&.x.xW...]v+I..Z]Z......L6z+........|.r...........W..G
+0880: ......-.2....(xh.~.B.1z.."S3...l...ck.2......`|..1....?..2.~....
+08c0: ...........B.. +.....pc..u(.......%..7...<@.....G....%`.5..Q..
+0900: ..[....@L.wq..E.~..i.Bf.F.:.F=...o...3a....<.^...".i.K#.........
+0940: 0...0....+........}0{00..+.....0..$http://commercial.ocsp.identr
+0980: ust.com0G..+.....0..;http://validation.identrust.com/roots/comme
+09c0: rcialrootca1.p7c0...U.#..0....D........{.B.&T..6v0...U.......0..
+0a00: ..0..1..U. ...(0..$0.. ..U. .0...0P..+.......0D0B.>https://secur
+0a40: e.identrust.com/certificates/policy/ts/index.html0.0....+.......
+0a80: 0.....This TrustID Server Certificate has been issued in accorda
+0ac0: nce with IdenTrust's TrustID Certificate Policy found at https:/
+0b00: /secure.identrust.com/certificates/policy/ts/index.html0J..U...C
+0b40: 0A0?.=.;.9http://validation.identrust.com/crl/commercialrootca1.
+0b80: crl0;..U.%.402..+.........+.........+.........+.........+.......
+0bc0: 0...U...........0...U.......V$<......x...XH..T.0...*.H..........
+0c00: ......r,..;#..J}e.}...Un..n..kkC..q..rL...../.......E!......i..@
+0c40: ........}..%.H....2...i.M....,...Z.H.Y...cb..O...w.$...uQ.Uq..
+0c80: ..........YY....D......H...5..g,I.Jbf..U......H..$v.p..?5..\....
+0cc0: ...N..R.om.!:...I9%~GV.Y.d.*......t.i.hY?....f"..J......{t7C....
+0d00: ....._a..i.=..k_...=........_...U..E..k%.:T..]..M.,)._/........z
+0d40: .j.g........Eu....d+.H..=S...&A.G..{..W|...p......B.RK..Y...K...
+0d80: ......irer<.YV?....)..a..S!..[...6...=.&.Nt."O/.....9h....q7x..g
+0dc0: ..."S.7..i/u...#..-..-..s.....[.9..../e2.S....5L...!4...y.+..K.!
+0e00: .Z9...0...0..w.........AB...H.o.!....0...*.H........0?1$0"..U...
+0e40: .Digital Signature Trust Co.1.0...U....DST Root CA X30...1409251
+0e80: 62803Z..210929162803Z0J1.0...U....US1.0...U....IdenTrust1'0%..U.
+0ec0: ...IdenTrust Commercial Root CA 10.."0...*.H.............0......
+0f00: ...P..?.=.3F.oQa...O.g.]..S..(......Cr...]|..B.1Pt...|..!.C...^.
+0f40: n....Z2......\......q..S.N......O20.K.^W.S......b+.$.b....)KIx<.
+0f80: `."...6....,T.g5ns..X......&z..6........?@.mZ...4.$.t#.]3..]..%.
+0fc0: 0..]...G......II..[....$..bOO....t...r.jz.I..Fy.......Y.u!.e..V.
+1000: ...`....R......+#.#v;.3....i.K..N.~.9...Dp~..Z.......5.II..V.=..
+1040: .}.;...M..O.7....j.b..5.Qy,.%8..K..\....9.Jt|.Y..?N.\R.=.R......
+1080: I4.(.A.:......._......P`.1.s.....3.t.  .gl...zU.FN....>.....3d+
+10c0: c.2^...{.xo........xz....rt.Utx...np..O..h.{.1.s==.*..A...M.eky3
+1100: ..........z0..v0...U...........0...U.......0.......0..;..U. ...2
+1140: 0...0.. ..`.H.../...0...0J..+........>https://secure.identrust.c
+1180: om/certificates/policy/ts/index.html0....+.......0.....This Trus
+11c0: tID Server Certificate has been issued in accordance with IdenTr
+1200: ust's TrustID Certificate Policy found at https://secure.identru
+1240: st.com/certificates/policy/ts/index.html0...g.....0...U.......D.
+1280: .......{.B.&T..6v0<..U...50301./.-.+http://crl.identrust.com/DST
+12c0: ROOTCAX3CRL.crl0t..+........h0f0'..+.....0...http://x3ocsp.ident
+1300: rust.com0;..+.....0../http://apps.identrust.com/roots/dstrootcax
+1340: 3.p7c0...U.%..0...+.........+.......0...U.#..0.......{,q...K.u..
+1380: .`...0...*.H..............?G>.....'LU....K-.1...%J.3tP.b..DM....
+13c0: ..p........40...1.......!.....VZ.....*..=.07.S.N..:a......d...NO
+1400: ...*.k...f...v....NZ...M....I4H..3L.$..4.......N.S...?.'b$!.....
+1440: ..i....;..Q....\..^$>.O}.y...\N.;.@.xu.........9..EX....8.......
+1480: ...e......NH..Z.q...8....
+== Info: SSLv2, Unknown (22):
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....M
+== Info: SSLv3, TLS handshake, Server key exchange (12):
+<= Recv SSL data, 333 bytes (0x14d)
+0000: ...I...A...>,.e.~....WJC^..."@...W...C2.mI:*w.}.F..Cm.m.,....j@.
+0040: k...TP..j......&.\.Q.n.gJJ.Y.ps..x`..8.+....G....M%..@WZ...M...~
+0080: .H..-.Vp.n..Z.-D....#4$.....^..L....s..e.k,..w..9~&.,...vm....H
+00c0: .>e.o.?..{E...^...j..i2.sN...cR........n.gX...>BlmK).......dr..*
+0100: ....F...{..t.....a....TV...T..U.C....Ng..`....L..D....WK.....xY
+0140: qC.x....=..;z
+== Info: SSLv2, Unknown (22):
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+== Info: SSLv3, TLS handshake, Server finished (14):
+<= Recv SSL data, 4 bytes (0x4)
+0000: ....
+== Info: SSLv2, Unknown (22):
+=> Send SSL data, 5 bytes (0x5)
+0000: ....F
+== Info: SSLv3, TLS handshake, Client key exchange (16):
+=> Send SSL data, 70 bytes (0x46)
+0000: ...BA.....;.k...5.........&..*s...WMQ2u7 N.h.!]..4...MP.lG.;.M..
+0040: @..s6.
+== Info: SSLv2, Unknown (20):
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+== Info: SSLv3, TLS change cipher, Client hello (1):
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+== Info: SSLv2, Unknown (22):
+=> Send SSL data, 5 bytes (0x5)
+0000: ....(
+== Info: SSLv3, TLS handshake, Finished (20):
+=> Send SSL data, 16 bytes (0x10)
+0000: ....A.D.I....4..
+== Info: SSLv2, Unknown (20):
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+== Info: SSLv3, TLS change cipher, Client hello (1):
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: SSLv2, Unknown (22):
+<= Recv SSL data, 5 bytes (0x5)
+0000: ....(
+== Info: SSLv3, TLS handshake, Finished (20):
+<= Recv SSL data, 16 bytes (0x10)
+0000: ....>.I,~./.O(..
+== Info: SSL connection using ECDHE-RSA-AES256-GCM-SHA384
+== Info: Server certificate:
+== Info: 	 subject: CN=*.api.letsencrypt.org; O=INTERNET SECURITY RESEARCH GROUP; L=Mountain View; ST=California; C=US
+== Info: 	 start date: 2015-06-26 17:05:45 GMT
+== Info: 	 expire date: 2018-06-25 17:05:45 GMT
+== Info: 	 subjectAltName: acme-v01.api.letsencrypt.org matched
+== Info: 	 issuer: C=US; O=IdenTrust; OU=TrustID Server; CN=TrustID Server CA A52
+== Info: 	 SSL certificate verify ok.
+== Info: SSLv2, Unknown (23):
+=> Send SSL data, 5 bytes (0x5)
+0000: .....
+=> Send header, 104 bytes (0x68)
+0000: GET /acme/new-reg HTTP/1.1
+001c: User-Agent: curl/7.35.0
+0035: Host: acme-v01.api.letsencrypt.org
+0059: Accept: */*
+0066: 
+== Info: SSLv2, Unknown (23):
+<= Recv SSL data, 5 bytes (0x5)
+0000: .....
+<= Recv header, 33 bytes (0x21)
+0000: HTTP/1.1 405 Method Not Allowed
+== Info: Server nginx is not blacklisted
+<= Recv header, 15 bytes (0xf)
+0000: Server: nginx
+<= Recv header, 40 bytes (0x28)
+0000: Content-Type: application/problem+json
+<= Recv header, 20 bytes (0x14)
+0000: Content-Length: 91
+<= Recv header, 13 bytes (0xd)
+0000: Allow: POST
+<= Recv header, 65 bytes (0x41)
+0000: Boulder-Request-Id: tkIuhZGwIvxt4h1KhLVr_XtQhn4KCq5gze8WMC8a3f8
+<= Recv header, 59 bytes (0x3b)
+0000: Replay-Nonce: 0n5VnfMiGAmA6xQtVX1p3VsMy4tld7SEI3UYrhPXWGU
+<= Recv header, 40 bytes (0x28)
+0000: Expires: Thu, 02 Mar 2017 14:04:55 GMT
+<= Recv header, 46 bytes (0x2e)
+0000: Cache-Control: max-age=0, no-cache, no-store
+<= Recv header, 18 bytes (0x12)
+0000: Pragma: no-cache
+<= Recv header, 37 bytes (0x25)
+0000: Date: Thu, 02 Mar 2017 14:04:55 GMT
+<= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+<= Recv header, 2 bytes (0x2)
+0000: 
+<= Recv data, 91 bytes (0x5b)
+0000: {.  "type": "urn:acme:error:malformed",.  "detail": "Method not 
+0040: allowed",.  "status": 405.}
+== Info: Connection #0 to host acme-v01.api.letsencrypt.org left intact

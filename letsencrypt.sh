@@ -6,6 +6,7 @@
 # This script is licensed under The MIT License (see LICENSE for more information).
 
 set -e
+#set -x
 set -u
 set -o pipefail
 [[ -n "${ZSH_VERSION:-}" ]] && set -o SH_WORD_SPLIT && set +o FUNCTION_ARGZERO
@@ -61,7 +62,7 @@ load_config() {
 
   # Default values
   CA="https://acme-v01.api.letsencrypt.org/directory"
-  LICENSE="https://letsencrypt.org/documents/LE-SA-v1.0.1-July-27-2015.pdf"
+  LICENSE="https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf"
   CERTDIR=
   CHALLENGETYPE="http-01"
   CONFIG_D=
@@ -259,11 +260,11 @@ _openssl() {
 
 # Send http(s) request with specified method
 http_request() {
-  tempcont="$(_mktemp)"
 
   set +e
   if [[ "${1}" = "head" ]]; then
-    wget -q --spider --server-response "${2}" 2>&1 | awk '{print substr($0,3)}' | grep -E "(*: )" 
+#    wget -q --spider --server-response "${2}" 2>&1 | awk '{print substr($0,3)}' | grep -E "(*: )" 
+    curl -s "${2}" -I
     wgetret="${?}"
   elif [[ "${1}" = "get" ]]; then
     wget -O- "${2}"
@@ -279,14 +280,9 @@ http_request() {
 
   if [[ ! "${wgetret}" = "0" ]]; then
     _exiterr "Problem connecting to server (wget returned with ${wgetret})"
-  fi
-
-  if [[ ! "${statuscode:0:1}" = "2" ]]; then
-    echo "  + ERROR: An error occurred while sending ${1}-request to ${2} (Status ${statuscode})" >&2
+echo "  + ERROR: An error occurred while sending ${1}-request to ${2} (Status ${statuscode})" >&2
     echo >&2
     echo "Details:" >&2
-    cat "${tempcont}" >&2
-    rm -f "${tempcont}"
 
     # Wait for hook script to clean the challenge if used
     if [[ -n "${HOOK}" ]] && [[ "${HOOK_CHAIN}" != "yes" ]] && [[ -n "${challenge_token:+set}" ]]; then
@@ -296,10 +292,9 @@ http_request() {
     # remove temporary domains.txt file if used
     [[ -n "${PARAM_DOMAIN:-}" && -n "${DOMAINS_TXT:-}" ]] && rm "${DOMAINS_TXT}"
     exit 1
-  fi
+ 
+ fi
 
-  cat "${tempcont}"
-  rm -f "${tempcont}"
 }
 
 # Send signed request
@@ -309,6 +304,7 @@ signed_request() {
 
   # Retrieve nonce from acme-server
   nonce="$(http_request head "${CA}" | grep Replay-Nonce: | awk -F ': ' '{print $2}' | tr -d '\n\r')"
+  tst="$(echo -n $nonce | hexdump)"
 
   # Build header with just our public key and algorithm information
   header='{"alg": "RS256", "jwk": {"e": "'"${pubExponent64}"'", "kty": "RSA", "n": "'"${pubMod64}"'"}}'

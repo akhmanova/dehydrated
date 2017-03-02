@@ -1,0 +1,5 @@
+{
+  "type": "urn:acme:error:badNonce",
+  "detail": "JWS has invalid anti-replay nonce gzBK84XAWFlhWz2k8k0ogJUjH2uW820jgV7ZGgmjNsY",
+  "status": 400
+}
