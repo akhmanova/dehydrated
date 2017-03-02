@@ -36,13 +36,13 @@ check_dependencies() {
   command -v grep > /dev/null 2>&1 || _exiterr "This script requires grep."
   _mktemp -u > /dev/null 2>&1 || _exiterr "This script requires mktemp."
 
-  # curl returns with an error code in some ancient versions so we have to catch that
+  # wget returns with an error code in some ancient versions so we have to catch that
   set +e
-  curl -V > /dev/null 2>&1
+  wget -V > /dev/null 2>&1
   retcode="$?"
   set -e
   if [[ ! "${retcode}" = "0" ]] && [[ ! "${retcode}" = "2" ]]; then
-    _exiterr "This script requires curl."
+    _exiterr "This script requires wget."
   fi
 }
 
@@ -263,22 +263,22 @@ http_request() {
 
   set +e
   if [[ "${1}" = "head" ]]; then
-    statuscode="$(curl -s -w "%{http_code}" -o "${tempcont}" "${2}" -I)"
-    curlret="${?}"
+    wget -q --spider --server-response "${2}" 2>&1 | awk '{print substr($0,3)}' | grep -E "(*: )" 
+    wgetret="${?}"
   elif [[ "${1}" = "get" ]]; then
-    statuscode="$(curl -s -w "%{http_code}" -o "${tempcont}" "${2}")"
-    curlret="${?}"
+    wget -O- "${2}"
+    wgetret="${?}"
   elif [[ "${1}" = "post" ]]; then
-    statuscode="$(curl -s -w "%{http_code}" -o "${tempcont}" "${2}" -d "${3}")"
-    curlret="${?}"
+    wget -O- "${2}" --post-data "${3}"
+    wgetret="${?}"
   else
     set -e
     _exiterr "Unknown request method: ${1}"
   fi
   set -e
 
-  if [[ ! "${curlret}" = "0" ]]; then
-    _exiterr "Problem connecting to server (curl returned with ${curlret})"
+  if [[ ! "${wgetret}" = "0" ]]; then
+    _exiterr "Problem connecting to server (wget returned with ${wgetret})"
   fi
 
   if [[ ! "${statuscode:0:1}" = "2" ]]; then
