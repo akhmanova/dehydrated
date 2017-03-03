@@ -263,14 +263,14 @@ http_request() {
 
   set +e
   if [[ "${1}" = "head" ]]; then
-#    wget -q --spider --server-response "${2}" 2>&1 | awk '{print substr($0,3)}' | grep -E "(*: )" 
-    curl -s "${2}" -I
+    wget -nv --spider --server-response "${2}" 2>&1 | awk '{print substr($0,3)}' | grep -E "(*: )" 
+    #curl -s "${2}" -I
     wgetret="${?}"
   elif [[ "${1}" = "get" ]]; then
-    wget -O- "${2}"
+    wget -nv -O- "${2}"
     wgetret="${?}"
   elif [[ "${1}" = "post" ]]; then
-    wget -O- "${2}" --post-data "${3}"
+    wget -nv -O- "${2}" --post-data "${3}"
     wgetret="${?}"
   else
     set -e
